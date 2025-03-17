@@ -46,7 +46,7 @@ class Scheduler:
 
     def priority(self):
         if not self.running and self.ready_queue:
-            self.ready_queue.sort(key=lambda job: job.priority)
+            self.ready_queue.sort(key=lambda job: job.priority) ##Modified priority scheduling to sort by priority
             self.running = self.ready_queue.pop(0)
             self.log.append(f"{self.running} has entered running state")
 

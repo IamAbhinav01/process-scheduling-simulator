@@ -23,7 +23,7 @@ if st.sidebar.button("Generate Jobs"):
     st.session_state.running = False
 
 if "jobs" in st.session_state:
-    algorithm = st.selectbox("Select Scheduling Algorithm", ["FCFS", "SJF", "SRTF", "Priority", "Round Robin", "Exponential Average SRJF"])
+    algorithm = st.selectbox("Select Scheduling Algorithm", ["FCFS", "SJF", "SRTF", "Priority", "Round Robin", "Exponential Average SRJF"]) ##added option for choosing the algorithm needed
     if st.button("Start Simulation"):
         st.session_state.scheduler = Scheduler(algorithm, st.session_state.jobs, context_switch, time_quantum, tau, alpha)
         st.session_state.running = True
