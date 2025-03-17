@@ -51,7 +51,7 @@ if "scheduler" in st.session_state and st.session_state.running:
     st.subheader("Ready Queue")
     ready_queue = [job for job in st.session_state.scheduler.ready_queue]
     for job in ready_queue:
-        total = st.session_state.scheduler.jobs[job.pid].bursts[job.current_burst_idx]
+        total = st.session_state.scheduler.jobs[job.pid].bursts[job.current_burst_idx]  ##st.rerun_experimental changed to st.rerun as it not in newer version.
         st.write(f"Process {job.pid}")
         st.progress(job.progress / total if total > 0 else 0)
 
