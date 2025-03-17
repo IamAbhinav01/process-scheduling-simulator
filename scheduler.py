@@ -54,7 +54,7 @@ class Scheduler:
         if not self.running and self.ready_queue:
             self.running = self.ready_queue.pop(0)
             self.log.append(f"{self.running} has entered running state")
-        elif self.running and self.system_time % self.time_quantum == 0 and self.ready_queue:
+        elif self.running and self.system_time % self.time_quantum == 0 and self.ready_queue: ##round robin using Time Quantum
             self.ready_queue.append(self.running)
             self.running = self.ready_queue.pop(0)
             self.log.append(f"{self.running} has entered running state (RR switch)")
