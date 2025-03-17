@@ -4,7 +4,7 @@ from job_generator import generate_jobs
 from scheduler import Scheduler
 import time
 
-st.title("Processes Scheduling Simulator")
+st.title("Processes Scheduling Simulator")  ##using streamlit as an ui
 
 st.sidebar.header("Job Generation Parameters")
 num_jobs = st.sidebar.slider("Number of Jobs", 1, 20, 5)
