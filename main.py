@@ -43,7 +43,7 @@ if "scheduler" in st.session_state and st.session_state.running:
                     break
 
     if st.checkbox("Enable Animation"):
-        while st.session_state.running and st.session_state.scheduler.ready_queue:
+        while st.session_state.running and st.session_state.scheduler.ready_queue: ##Animations for the simulation
             st.session_state.scheduler.step()
             time.sleep(1 / speed)
             st.rerun()  # Updated to st.rerun()
