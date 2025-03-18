@@ -1,10 +1,10 @@
-# main for the streamlit app
+# main.py
 import streamlit as st
 from job_generator import generate_jobs
 from scheduler import Scheduler
 import time
 
-st.title("Processes Scheduling Simulator")  ##using streamlit as an ui
+st.title("Processes Scheduling Simulator")
 
 st.sidebar.header("Job Generation Parameters")
 num_jobs = st.sidebar.slider("Number of Jobs", 1, 20, 5)
@@ -23,7 +23,7 @@ if st.sidebar.button("Generate Jobs"):
     st.session_state.running = False
 
 if "jobs" in st.session_state:
-    algorithm = st.selectbox("Select Scheduling Algorithm", ["FCFS", "SJF", "SRTF", "Priority", "Round Robin", "Exponential Average SRJF"]) ##added option for choosing the algorithm needed
+    algorithm = st.selectbox("Select Scheduling Algorithm", ["FCFS", "SJF", "SRTF", "Priority", "Round Robin", "Exponential Average SRJF"])
     if st.button("Start Simulation"):
         st.session_state.scheduler = Scheduler(algorithm, st.session_state.jobs, context_switch, time_quantum, tau, alpha)
         st.session_state.running = True
@@ -43,7 +43,7 @@ if "scheduler" in st.session_state and st.session_state.running:
                     break
 
     if st.checkbox("Enable Animation"):
-        while st.session_state.running and st.session_state.scheduler.ready_queue: ##Animations for the simulation
+        while st.session_state.running and st.session_state.scheduler.ready_queue:
             st.session_state.scheduler.step()
             time.sleep(1 / speed)
             st.rerun()  # Updated to st.rerun()
@@ -51,7 +51,7 @@ if "scheduler" in st.session_state and st.session_state.running:
     st.subheader("Ready Queue")
     ready_queue = [job for job in st.session_state.scheduler.ready_queue]
     for job in ready_queue:
-        total = st.session_state.scheduler.jobs[job.pid].bursts[job.current_burst_idx]  ##st.rerun_experimental changed to st.rerun as it not in newer version.
+        total = st.session_state.scheduler.jobs[job.pid].bursts[job.current_burst_idx]
         st.write(f"Process {job.pid}")
         st.progress(job.progress / total if total > 0 else 0)
 

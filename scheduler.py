@@ -1,4 +1,4 @@
-# scheduler for CPU scheduling algorithms
+# scheduler.py
 class Scheduler:
     def __init__(self, algorithm, jobs, context_switch=0, time_quantum=2, tau=5, alpha=0.5):
         self.algorithm = algorithm
@@ -46,7 +46,7 @@ class Scheduler:
 
     def priority(self):
         if not self.running and self.ready_queue:
-            self.ready_queue.sort(key=lambda job: job.priority) ##Modified priority scheduling to sort by priority
+            self.ready_queue.sort(key=lambda job: job.priority)
             self.running = self.ready_queue.pop(0)
             self.log.append(f"{self.running} has entered running state")
 
@@ -54,7 +54,7 @@ class Scheduler:
         if not self.running and self.ready_queue:
             self.running = self.ready_queue.pop(0)
             self.log.append(f"{self.running} has entered running state")
-        elif self.running and self.system_time % self.time_quantum == 0 and self.ready_queue: ##round robin using Time Quantum
+        elif self.running and self.system_time % self.time_quantum == 0 and self.ready_queue:
             self.ready_queue.append(self.running)
             self.running = self.ready_queue.pop(0)
             self.log.append(f"{self.running} has entered running state (RR switch)")
