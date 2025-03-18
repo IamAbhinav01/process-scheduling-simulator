@@ -10,10 +10,6 @@ cd process-scheduling-simulator
 pip install streamlit
 streamlit run main.py
 
-## **Screenshots**
-Intial PAGE --> ![image](https://github.com/user-attachments/assets/0508efe1-b87e-4262-a417-87c013445220)
-
-Working PAGE ---> 
 ## **Project Overview**
 The Process Scheduling Simulator is designed to simulate operating system scheduling algorithms, including First-Come-First-Serve (FCFS), Shortest Job First (SJF), Shortest Remaining Time First (SRTF), Priority Scheduling, Round Robin, and Exponential Average SRJF. Built with Python and Streamlit, it allows users to generate random jobs with configurable parameters, select a scheduling algorithm, and visualize the process through an interactive UI. The simulator displays the ready queue, running process, logs, changes, and system metrics, making it an educational tool for understanding scheduling concepts.
 
@@ -54,4 +50,8 @@ Time: Controls animation speed with time.sleep.
 Other Tools
 GitHub: Hosts the public repository for version control and documentation.
 Git: Manages commits, branches, and pushes.
+<<<<<<< HEAD
 VS Code: Used for coding and running the Streamlit app.
+=======
+VS Code: Used for coding and running the Streamlit app.
+>>>>>>> 482661e (updated Readme)
