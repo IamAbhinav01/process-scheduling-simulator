@@ -16,9 +16,9 @@ The Process Scheduling Simulator is an interactive tool designed to simulate ope
 The interface, powered by Streamlit, displays the ready queue, running process, logs, changes, and system metrics, serving as an educational tool for understanding scheduling concepts. The project is hosted on a public GitHub repository with version control and detailed documentation.
 
 ## 2. Screenshots
-![Screenshot 1](assets/img1.png)
-![Screenshot 2](assets/img2.png)
-![Screenshot 3](assets/img3.png)
+\assets\img1.png
+\assets\img2.png
+\assets\img3.png
 
 ## 3. Functionalities
     1) Job Generation:
